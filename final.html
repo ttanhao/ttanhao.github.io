@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #header {
+            background-color:black;
+            color:white;
+            text-align:center;
+            padding:5px;
+        }
+
+        #nav {
+            line-height:80px;
+            background-color:#eeeeee;
+            height:300px;
+            width:100px;
+            float:left;
+            padding:5px;
+            list-style: none;
+        }
+
+        #section {
+            line-height: 250px;
+            float:left;
+            padding:10px;	 	 
+        }
+
+        #s2 {
+            width:400px;
+            float:left;
+            padding:10px;
+        } 
+
+        #footer {
+            background-color:black;
+            color:white;
+            clear:both;
+            text-align:center;
+            padding:5px;	 	 
+        }
+
+        .hidden{
+            display: none;
+        }
+        .show{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="header">
+        <h1>MY FAVORITE</h1>
+    </div>
+
+    <div id="nav">
+        book <br>
+    </div>
+
+    <div id="section">
+        <h2>请将鼠标放到book上。</h2>
+    </div>
+
+    <div id="s2" class="hidden">
+        <a href="https://book.douban.com/subject/6082808/" target="_blank"><h2>百年孤独</h2></a>
+        
+        <p>
+            《百年孤独》是魔幻现实主义文学的代表作，
+            描写了布恩迪亚家族七代人的传奇故事，
+            以及加勒比海沿岸小镇马孔多的百年兴衰，
+            反映了拉丁美洲一个世纪以来风云变幻的历史。
+            作品融入神话传说、民间故事、宗教典故等神秘因素
+            地糅合了现实与虚幻，展现出一个瑰丽的想象世界，
+            成为20世纪最重要的经典文学巨著之一。
+            1982年加西亚•马尔克斯获得诺贝尔文学奖，
+            奠定世界级文学大师的地位，
+            很大程度上乃是凭借《百年孤独》的巨大影响。
+        </p>
+    </div>
+
+    <div id="img" class="hidden">
+        <img src="http://epaper.cnxz.com.cn/dscb/res/1/84/2014-04/19/B07/res11_attpic_brief.jpg" alt="百年孤独">
+    </div>
+
+    <div id="footer">
+        学号：201721030234 <br>
+        谭昊 网络1702 <br>
+    </div>
+
+    <script>
+        var nav = document.getElementById("nav");
+        var section = document.getElementById("section");
+        var s2 = document.getElementById("s2");
+        var img = document.getElementById("img");
+        nav.onmouseover = function(){
+            section.className = "hidden";
+            s2.className = "show";
+
+        }
+        nav.onmouseleave = function(){
+            s2.className = "hidden";
+            section.className = "show";
+        }
+        s2.onmouseover = function(){
+            section.className = "hidden";
+            s2.className = "show";
+            img.className = "show";
+        }
+        s2.onmouseleave = function(){
+            s2.className = "hidden";
+            section.className = "show";
+            img.className = "hidden";
+        }
+        img.onmouseover = function(){
+            section.className = "hidden";
+            s2.className = "show";
+            img.className = "show";
+        }
+        img.onmouseleave = function(){
+            s2.className = "hidden";
+            section.className = "show";
+            img.className = "hidden";
+        }
+    </script>
+</body>
+</html>
